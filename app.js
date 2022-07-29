@@ -1,10 +1,6 @@
 //* input by the user 
 
-let originalLink = "";
-const urlInput = document.getElementById("urlInput");
-urlInput.addEventListener("change", (event) => {
-  originalLink = event.target.value;
-});
+
 
 //! function to check if url is valid or not
 
@@ -24,6 +20,8 @@ function isValidURL(url) {
 const output = document.getElementById("output");
 const shorten = document.getElementById("shorten_url");
 shorten.addEventListener("click", () => {
+const urlInput = document.getElementById("urlInput");
+let originalLink = urlInput.value;
   if (isValidURL(originalLink)) {
     urlInput.value = "";
     const shorten_url = async () => {
@@ -51,6 +49,7 @@ shorten.addEventListener("click", () => {
     alert("Enter a valid Url");
     urlInput.value = "";
   }
+  urlInput ="";
 });
 
 //* function for copying shorten url
